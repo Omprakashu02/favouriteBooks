@@ -1,0 +1,24 @@
+
+  <div class="login_container">
+    <h3 class="text-primary my-3 fw-bold">Welocome To My Favorite Books</h3>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="text-dark">Sign In</h4>
+        <form ngNativeValidate #loginAuthForm = "ngForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input name="email" [required]="true" [(ngModel)]="loginForm.email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <div  id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="password" class="form-label">Password</label>
+            <input [maxlength]="12" [required]="true"  name="password" [(ngModel)]="loginForm.password" [type]="isVisible?'text':'password'" class="form-control" id="password">
+            <span class="text-dark position-absolute cursor-pointer  show_hide" (click)="isVisible = !isVisible">{{isVisible?'hide':'show'}}</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary py-1" (click)="navigateToBookList()">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>

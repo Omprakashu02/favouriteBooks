@@ -1,0 +1,64 @@
+
+<form ngNativeValidate #bookAddUpdateForm="ngForm">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{isEdit?'Edit Book':'Add Book'}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close(false)"></button>
+	</div>
+	<div class="modal-body">
+      <div class="row">
+        <div class="mb-2 col-6">
+          <label for="bookId" class="form-label">Book Id <img class="mb-3 ms-1" height="5" width="5"  src="../../../../../assets/svgIcon/asterisk.svg" alt=""></label>
+          <input [required]="true" name="bookId" onlyAlphabetsAndNumbers [(ngModel)]="addUpdateBooks.bookId" type="text" class="form-control" id="bookId" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2 col-6">
+          <label for="title" class="form-label">Title <img class="mb-3 ms-1" height="5" width="5"  src="../../../../../assets/svgIcon/asterisk.svg" alt=""></label>
+          <input [required]="true" onlyAlphabetsAndNumbers name="title" [(ngModel)]="addUpdateBooks.title" type="text" class="form-control" id="title" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2 col-12">
+          <label for="author" class="form-label">Author <img class="mb-3 ms-1" height="5" width="5"  src="../../../../../assets/svgIcon/asterisk.svg" alt=""></label>
+          <input [required]="true" onlyAlphabets name="author" [(ngModel)]="addUpdateBooks.author" type="text" class="form-control" id="author" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2 col-6">
+          <label for="dateOfBirth" class="mb-2">Published Date <img class="mb-3 ms-1" height="5" width="5"  src="../../../../../assets/svgIcon/asterisk.svg" alt=""></label>
+          <div class="input-group">
+            <input
+            [required]="true"
+              id="publishedDate"
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="publishedDate"
+              readonly
+              [(ngModel)]="addUpdateBooks.publishedDate"
+              ngbDatepicker
+              #dp="ngbDatepicker"
+            />
+            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+              <svg class="cursorPointer " id="Group_1377" data-name="Group 1377" xmlns="http://www.w3.org/2000/svg" width="17.319" height="17.316" viewBox="0 0 14.319 14.316">
+                <path id="Path_8" data-name="Path 8" d="M-4636.507,3010.715c-.166,0-.33,0-.5,0a.245.245,0,0,1-.268-.268q0-.5,0-.991a.248.248,0,0,1,.28-.272q.488,0,.975,0a.247.247,0,0,1,.276.276q0,.487,0,.975c0,.188-.1.278-.289.28C-4636.187,3010.716-4636.347,3010.715-4636.507,3010.715Zm-.246-.519h.495v-.491h-.495Z" transform="translate(4639.826 -3003.303)" fill="#7c89a4"/>
+                <path id="Path_9" data-name="Path 9" d="M-4576.561,3010.715c-.165,0-.33,0-.5,0a.245.245,0,0,1-.268-.268q-.005-.5,0-.991a.248.248,0,0,1,.28-.272q.488,0,.975,0a.247.247,0,0,1,.276.276q0,.487,0,.975c0,.188-.1.278-.289.28C-4576.241,3010.716-4576.4,3010.715-4576.561,3010.715Zm-.246-.519h.494v-.491h-.494Z" transform="translate(4582.438 -3003.303)" fill="#7c89a4"/>
+                <path id="Path_10" data-name="Path 10" d="M-4516.737,3010.715c-.165,0-.33,0-.5,0a.245.245,0,0,1-.268-.268q-.005-.5,0-.991a.248.248,0,0,1,.28-.272q.488,0,.975,0a.248.248,0,0,1,.277.276q0,.487,0,.975c0,.188-.1.278-.289.28C-4516.418,3010.716-4516.578,3010.715-4516.737,3010.715Zm-.246-.519h.494v-.491h-.494Z" transform="translate(4525.168 -3003.303)" fill="#7c89a4"/>
+                <path id="Path_11" data-name="Path 11" d="M-4456.845,3010.718c-.166,0-.331,0-.5,0a.248.248,0,0,1-.276-.277q0-.487,0-.974c0-.189.094-.279.289-.28q.479,0,.958,0a.252.252,0,0,1,.285.285q0,.479,0,.959c0,.2-.094.286-.3.288C-4456.537,3010.72-4456.691,3010.719-4456.845,3010.718Zm.243-1.012h-.492v.494h.492Z" transform="translate(4467.842 -3003.306)" fill="#7c89a4"/>
+                <path id="Path_12" data-name="Path 12" d="M-4637.263,3069.819c0-.16,0-.32,0-.479a.248.248,0,0,1,.278-.274q.488,0,.975,0a.248.248,0,0,1,.278.275q0,.495,0,.991a.244.244,0,0,1-.271.266q-.5,0-.99,0a.245.245,0,0,1-.27-.267C-4637.265,3070.16-4637.263,3069.989-4637.263,3069.819Zm.522-.237v.5h.491v-.5Z" transform="translate(4639.817 -3060.629)" fill="#7c89a4"/>
+                <path id="Path_13" data-name="Path 13" d="M-4577.351,3069.819c0-.16,0-.32,0-.479a.248.248,0,0,1,.279-.274q.487,0,.975,0a.248.248,0,0,1,.278.275c0,.33,0,.66,0,.991a.246.246,0,0,1-.271.266q-.494,0-.991,0a.245.245,0,0,1-.269-.267C-4577.354,3070.16-4577.351,3069.989-4577.351,3069.819Zm.521-.237v.5h.491v-.5Z" transform="translate(4582.463 -3060.629)" fill="#7c89a4"/>
+                <path id="Path_14" data-name="Path 14" d="M-4517.5,3069.819c0-.16,0-.32,0-.479a.248.248,0,0,1,.279-.274c.324,0,.65,0,.975,0a.248.248,0,0,1,.277.275c0,.33,0,.66,0,.991a.245.245,0,0,1-.27.266q-.5,0-.991,0a.245.245,0,0,1-.27-.267C-4517.5,3070.16-4517.5,3069.989-4517.5,3069.819Zm.522-.237v.5h.492v-.5Z" transform="translate(4525.165 -3060.629)" fill="#7c89a4"/>
+                <path id="Path_15" data-name="Path 15" d="M-4456.842,3069.069c.159,0,.319,0,.479,0a.248.248,0,0,1,.274.278q0,.487,0,.975a.248.248,0,0,1-.274.278q-.5,0-.991,0a.244.244,0,0,1-.266-.271q-.005-.5,0-.991a.245.245,0,0,1,.267-.27C-4457.184,3069.066-4457.013,3069.069-4456.842,3069.069Zm.236.52h-.494v.491h.494Z" transform="translate(4467.845 -3060.633)" fill="#7c89a4"/>
+                <path id="Path_16" data-name="Path 16" d="M-4635.739,3129.722c0,.16,0,.32,0,.48a.249.249,0,0,1-.278.274c-.326,0-.65,0-.975,0a.248.248,0,0,1-.278-.275c0-.33,0-.66,0-.991a.243.243,0,0,1,.271-.265q.494,0,.99,0a.245.245,0,0,1,.27.266C-4635.736,3129.382-4635.739,3129.552-4635.739,3129.722Zm-.517-.259h-.5v.492h.5Z" transform="translate(4639.825 -3117.952)" fill="#7c89a4"/>
+                <path id="Path_17" data-name="Path 17" d="M-4577.373,3129.7c0-.155,0-.309,0-.463,0-.194.091-.287.28-.289q.488,0,.975,0a.248.248,0,0,1,.277.276c0,.325,0,.65,0,.975a.251.251,0,0,1-.288.281q-.479,0-.958,0a.251.251,0,0,1-.285-.284C-4577.375,3130.03-4577.373,3129.865-4577.373,3129.7Zm.523-.237v.5h.49v-.5Z" transform="translate(4582.484 -3117.955)" fill="#7c89a4"/>
+                <path id="Path_18" data-name="Path 18" d="M-4516.728,3128.948c.165,0,.33,0,.495,0a.243.243,0,0,1,.259.261q.005.5,0,1.007a.245.245,0,0,1-.273.263c-.331,0-.661,0-.991,0a.244.244,0,0,1-.267-.269q0-.5,0-.991a.248.248,0,0,1,.281-.271C-4517.058,3128.947-4516.893,3128.948-4516.728,3128.948Zm.238.519h-.5v.492h.5Z" transform="translate(4525.172 -3117.956)" fill="#7c89a4"/>
+                <path id="Path_19" data-name="Path 19" d="M-4693.754,2872.483c0-.176,0-.33,0-.483a.5.5,0,0,1,.516-.513.5.5,0,0,1,.5.508c0,.153,0,.308,0,.474h5.626c0-.152,0-.3,0-.457a.5.5,0,0,1,.5-.525.5.5,0,0,1,.518.527c0,.148,0,.3,0,.467.248,0,.485,0,.723,0a2.482,2.482,0,0,1,1.212.289,2.46,2.46,0,0,1,1.383,2.247c.014,2.753.007,5.506,0,8.26a2.545,2.545,0,0,1-2.523,2.524q-4.633,0-9.267,0a2.546,2.546,0,0,1-2.524-2.523q0-4.121,0-8.244a2.56,2.56,0,0,1,2.5-2.55C-4694.308,2872.479-4694.042,2872.483-4693.754,2872.483Zm-2.3,4.115v.143q0,3.226,0,6.454a1.539,1.539,0,0,0,1.6,1.586q4.537,0,9.073,0a1.79,1.79,0,0,0,.441-.053,1.523,1.523,0,0,0,1.158-1.53q0-3.235,0-6.47c0-.041-.006-.082-.01-.128Zm3.323-3.075c0,.157,0,.3,0,.453a.517.517,0,0,1-.508.542.517.517,0,0,1-.514-.537c0-.152,0-.3,0-.482a6.976,6.976,0,0,0-1.071.056,1.6,1.6,0,0,0-1.211,1.989h12.248c0-.2.015-.394,0-.583a1.5,1.5,0,0,0-.89-1.3,3.371,3.371,0,0,0-1.406-.143c0,.174,0,.328,0,.481a.514.514,0,0,1-.512.522.515.515,0,0,1-.509-.525c0-.153,0-.307,0-.47Z" transform="translate(4697.078 -2871.488)" fill="#7c89a4"/>
+            </svg></button>
+          </div>
+        </div>
+        <div class="mb-2 col-6">
+          <label for="price" class="form-label">Price <img class="mb-3 ms-1" height="5" width="5"  src="../../../../../assets/svgIcon/asterisk.svg" alt=""></label>
+          <input [required]="true" OnlyNumberWithSingleDecimal name="price" [(ngModel)]="addUpdateBooks.price" type="text" class="form-control" id="price" aria-describedby="emailHelp">
+        </div>
+      </div>
+
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-outline-dark py-1" (click)="addEditBooks()">Save</button>
+		<button type="button" class="btn btn-outline-dark py-1" (click)="activeModal.close()">Cancel</button>
+	</div>
+</form>
+

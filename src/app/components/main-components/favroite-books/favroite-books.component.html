@@ -1,0 +1,85 @@
+<!-- <div class="d-flex justify-content-end"><span (click)="logOut()" class="text-dark f-16 text-end text-underline fw-bold font-bold cursor-pointer p-4 pb-0">Log out</span></div>
+
+<div class="container-fluid">
+  <div>
+    <h3 class="text-dark text-center my-4 text-underline">My Favroite Books List</h3>
+    <div><button class="btn btn-small py-1 btn-warning" (click)="addBooks()">Add Books</button></div>
+  </div>
+  <div>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Book Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Published Date</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bookList ; let i = index" >
+          <td>{{i+1}}</td>
+          <th scope="row">{{item?.bookId}}</th>
+          <td>{{item?.title}}</td>
+          <td>{{item?.author}}</td>
+          <td>{{item?.publishedDate}}</td>
+          <td> ${{item?.price}}</td>
+          <td>
+            <button class="btn btn-small py-0 btn-primary" (click)="editBook(item ,i)">Edit</button>
+            <button class="btn btn-small mx-2 py-0 btn-danger" (click)="deleteBook(item,i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+<app-navbar></app-navbar>
+<div class="" >
+  <!-- <div class="d-flex justify-content-end"><span (click)="logOut()" class="text-dark f-16 text-end text-underline fw-bold font-bold cursor-pointer p-4 pb-0">Log out</span></div> -->
+  <div class="container-fluid" >
+    <div class="card h-100">
+      <div class="card-header bg-gray">
+        <div class="d-flex justify-content-between">
+          <h3 class="text-dark">My Favroite Books List</h3>
+          <button class="btn btn-small py-1 btn-warning" (click)="addBooks()">Add Books</button>
+        </div>
+      </div>
+      <div class="card-body book_card_body">
+        <div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Book Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Published Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of bookList ; let i = index" >
+                <td>{{i+1}}</td>
+                <th scope="row">{{item?.bookId}}</th>
+                <td>{{item?.title}}</td>
+                <td>{{item?.author}}</td>
+                <td>{{item?.publishedDate}}</td>
+                <td> ${{item?.price}}</td>
+                <td>
+                  <button class="btn btn-small py-0 btn-primary" (click)="editBook(item ,i)">Edit</button>
+                  <button class="btn btn-small mx-2 py-0 btn-danger" (click)="deleteBook(item,i)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
